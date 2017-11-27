@@ -1,0 +1,1 @@
+# Keep a copy of LICENSE in this repo and past it to the target `pwd`

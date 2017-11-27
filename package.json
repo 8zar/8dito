@@ -1,0 +1,25 @@
+{
+  "name": "8dito",
+  "version": "1.0.0",
+  "description": "Don't Repeat Yourself && Bring Your Own Device",
+  "main": "tasks.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/8zar/8dito.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/8zar/8dito/issues"
+  },
+  "homepage": "https://github.com/8zar/8dito#readme",
+  "dependencies": {
+    "commander": "^2.12.1"
+  }
+}

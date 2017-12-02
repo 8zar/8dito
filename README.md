@@ -6,13 +6,17 @@ Don't Repeat Yourself && Bring Your Own Device
 Document, Script, and Scaffold
 
 
- 
 
  - command(./dito.js) 
  - content(./docs/) 
  - helpers(./scripts/) 
  - files(./src/)
 
+# Usage:
 
+
+```
+dito license
+```
 
  

@@ -83,6 +83,8 @@ program
                 (function () {
                     console.log('Generate Ignore files');
                     // accept input to be append to the .*ignore file
+                    cp(cli_dir + '/src/.gitignore', current_working_dir + '/.gitignore');
+                    cp(cli_dir + '/src/.dockerignore', current_working_dir + '/.dockerignore');
                 })();
                 break;
         }

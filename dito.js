@@ -54,6 +54,12 @@ function cp(source_dir, target_dir) {
         .pipe(fs.createWriteStream(target_dir))
 }
 
+
+function clean(current_workdir, filename) {
+    console.log('find . -name "' + filename + '" -exec rm -f {} \\;');
+    exec('cd ' + current_workdir + ' && find . -name "' + filename + '" -exec rm -f {} \\;')
+}
+
 program
     .command('*')
     .action(function (env) {
@@ -70,7 +76,7 @@ program
                 (function () {
                     // pull latest commit
                     // install dependencies
-                    exec(cli_dir + "/scripts/02_upgrade.sh "+cli_dir, function (error, stdout, stderr) {
+                    exec(cli_dir + "/scripts/02_upgrade.sh " + cli_dir, function (error, stdout, stderr) {
                         if (error) {
                             throw error
                         }
@@ -87,6 +93,15 @@ program
                     cp(cli_dir + '/src/.dockerignore', current_working_dir + '/.dockerignore');
                 })();
                 break;
+
+            case 'cleanpyc':
+                (function () {
+                    console.log('Clean pyc: ' + current_working_dir);
+
+                    clean(current_working_dir, '*.pyc')
+
+                })();
+                break
         }
     });
 

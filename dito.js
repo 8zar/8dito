@@ -4,6 +4,7 @@
  * Module dependencies.
  */
 var fs = require('fs');
+var ncp = require('ncp');
 var program = require('commander');
 /*
 var sys = require('sys');
@@ -93,6 +94,19 @@ program
                     cp(cli_dir + '/src/.dockerignore', current_working_dir + '/.dockerignore');
                 })();
                 break;
+
+
+            case 'github':
+                (function () {
+                    console.log('Generate Github issue template');
+                    // accept input to be append to the .*ignore file
+                    console.info('Source Dir ' + cli_dir + '/src/.github');
+                    console.info('Destin Dir ' + current_working_dir + '/.github');
+
+                    ncp(cli_dir + '/src/.github', current_working_dir + '/.github');
+                })();
+                break;
+
 
             case 'cleanpyc':
                 (function () {

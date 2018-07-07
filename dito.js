@@ -110,7 +110,7 @@ program
             case 'circle':
                 (function(){
                     console.log('Generate Circle config template');
-                    ncp(cli_dir + '/src/.circleci', current_working_dir + '/.cirlceci');
+                    ncp(cli_dir + '/src/.circleci', current_working_dir + '/.circleci');
                 })();
                 break;
 

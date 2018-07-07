@@ -107,6 +107,22 @@ program
                 })();
                 break;
 
+            case 'circle':
+                (function(){
+                    console.log('Generate Circle config template');
+                    ncp(cli_dir + '/src/.circleci', current_working_dir + '/.cirlceci');
+                })();
+                break;
+
+            case 'make':
+                (function () {
+                    console.log('Generate Makefile template');
+                    cp(cli_dir + '/src/Makefile', current_working_dir + '/Makefile');
+                })();
+
+            case 'TODO':
+                // TODO: bootstrap file templates here
+                break;
 
             case 'cleanpyc':
                 (function () {

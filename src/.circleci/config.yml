@@ -1,0 +1,28 @@
+version: 2
+jobs:
+  build:
+    working_directory: /opt/app
+    docker:
+
+#      https://circleci.com/docs/2.0/google-auth/
+      - image: google/cloud-sdk
+
+        environment:
+
+          HOME: /root
+#          PROJECT_ID: ""
+#          CLOUDSDK_COMPUTE_ZONE: ""
+
+          GOOGLE_PROJECT_ID: "project=" # TODO: replace set env var
+          GOOGLE_CLUSTER_NAME: "name=" # TODO: replace set env var
+          GOOGLE_COMPUTE_ZONE: "zone=" # TODO: replace set env var
+
+          DOCKER_IMAGE_PREFIX: 8zar
+          COMPOSE_PROJECT_NAME: 8zar
+
+    steps:
+      - checkout
+      - run:
+          name: Set the badge green!
+          command: |
+            echo "Hello circle"
